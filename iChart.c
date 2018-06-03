@@ -67,3 +67,28 @@ char *messages[]={"Main Menu", "Allows entry of data from file/keyboard", "Draws
                      if(p==NULL)
                        alloc_error_exit();
                      
+                     
+/*save screen contents into allocated memory*/
+savevideo(sr,sc,er,ec,p);
+                     
+ /* give the effect of zooming menus*/
+delay(15);
+menubox(9,37,15,42,127,0);
+drawbox(9,37,15,42,127);
+                     delay(15);
+                     menubox(sr,sc,er,ec,127,07);
+                     drawbox(sr + 1,sc + 2,er-2,ec-4,127);
+                     /*determine length of current menu name*/
+                     l=strlen(messages[helpnumber];
+/*calculate column from where the menu name is to be displayed*/
+                              l=39-l/2;
+                              /*display menu name*/
+                              writestring(messages[helpnumber],sr+2,l,127);
+                              /*draw two horizontal lines*/
+                              for(i=sc+3;i<=ec-4;i++)
+                              {
+                                writechar(sr+3,i,196,127);
+                                writechar(er-4,i,196,127);
+                              }
+                              
+                                       
